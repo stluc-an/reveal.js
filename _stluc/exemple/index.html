@@ -1,15 +1,17 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
 
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - Slide Backgrounds</title>
+		<title>AN123</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="../dist/reveal.css">
-		<link rel="stylesheet" href="../dist/theme/serif.css" id="theme">
+		<link rel="stylesheet" href="../../dist/reveal.css">
+
+		<!-- Le thème se choisit ici! Voyez les autres thème dans le dossier dist/theme/ -->
+		<link rel="stylesheet" href="../../dist/theme/black.css" id="theme">
 		<style type="text/css" media="screen">
 			.slides section.has-dark-background,
 			.slides section.has-dark-background h2 {
@@ -28,111 +30,138 @@
 
 			<div class="slides">
 
-				<section data-background="#00ffff">
-					<h2>data-background: #00ffff</h2>
+				<!-- chaque slide = <section> ... </section> -->
+				<section>
+					<p>Lisez les commentaires dans l'HTML pour bien comprendre comment utiliser Reveal.js!</p>
 				</section>
 
-				<section data-background="#bb00bb">
-					<h2>data-background: #bb00bb</h2>
-				</section>
 
-				<section data-background-color="lightblue">
-					<h2>data-background: lightblue</h2>
-				</section>
 
 				<section>
-					<section data-background="#ff0000">
-						<h2>data-background: #ff0000</h2>
-					</section>
-					<section data-background="rgba(0, 0, 0, 0.2)">
-						<h2>data-background: rgba(0, 0, 0, 0.2)</h2>
-					</section>
-					<section data-background="salmon">
-						<h2>data-background: salmon</h2>
-					</section>
+					<!-- la classe "r-fit-text" adapte la taille du texte pour remplir la slide -->
+					<h1 class="r-fit-text">Prénom Nom</h1>
 				</section>
 
-				<section data-background="rgba(0, 100, 100, 0.2)">
-					<section>
-						<h2>Background applied to stack</h2>
-					</section>
-					<section>
-						<h2>Background applied to stack</h2>
-					</section>
-					<section data-background="rgb(66, 66, 66)">
-						<h2>Background applied to slide inside of stack</h2>
-					</section>
-				</section>
 
-				<section data-background-transition="slide" data-background="assets/image1.png">
-					<h2>Background image</h2>
-				</section>
 
 				<section>
-					<section data-background-transition="slide" data-background="assets/image1.png">
-						<h2>Background image</h2>
-					</section>
-					<section data-background-transition="slide" data-background="assets/image1.png">
-						<h2>Background image</h2>
-					</section>
+					<h2>Intro</h2>
+					<p>Chaque section peut contenir tout les éléments HTML que l'ont souhaite y mettre.</p>
+					<p>Cependant, gardez en tête que des slides doivent compléter votre parole, et pas la remplacer, ou faire doublon par rapport à ce que vous dites.</p>
+					<p>Dès lors, évitez les slides avec trop de texte! 🤓</p>
 				</section>
 
-				<section data-background="assets/image2.png" data-background-size="100px" data-background-repeat="repeat" data-background-color="#111">
-					<h2>Background image</h2>
-					<pre>data-background-size="100px" data-background-repeat="repeat" data-background-color="#111"</pre>
+
+				<section>
+					<h2>Montrer des images</h2>
 				</section>
 
-				<section data-background="#888888">
-					<h2>Same background twice (1/2)</h2>
-				</section>
-				<section data-background="#888888">
-					<h2>Same background twice (2/2)</h2>
+
+				<!--
+					Je vous recommande de placer les images & vidéos liées à une présentation
+					dans des sous-dossiers de cette présentation, c'est plus propre :)
+				-->
+
+
+
+				<!--
+					Pour montrer des images, le mieux est de mettre l'image en fond.
+					data-background-size="contain" s'assure que l'image s'affiche en entier
+					(l'alternative, data-background-size="cover", s'assure que l'image remplisse la page,
+					mais sera dès lors rognée)
+				-->
+				<section data-background="img/helen_frankenthaler.jpg" data-background-size="contain">
+					<!-- Pas besoin de contenu dans la slide :) -->
 				</section>
 
-				<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm">
+
+
+
+
+				<section data-background="img/laura_anderson_barbata.jpg" data-background-size="contain">
+				</section>
+
+
+
+				<!--
+					Si vous vous sentez absolument obligé.e.s de montrer texte & image ensemble:
+						- utilisez data-src plutôt que src
+							(ça permet à Reveal.js de ne charger votre image que quand c'est nécessaire)
+
+						- utilisez la classe "r-stretch"
+							(pour que la taille de l'image s'ajuste à l'espace disponible
+				-->
+				<section>
+					<h2>Texte + image </h2>
+					<img data-src="./img/petra_cortright.jpg" class="r-stretch">
+				</section>
+
+
+
+
+				<section>
+					<h2>Montrer des vidéos</h2>
+				</section>
+
+
+
+
+				<!--
+					La plupart du temps, on va avoir besoin d'un "lecteur" vidéo,
+					avec possibilité de faire play, pause, etc. Faites comme ci-dessous:
+				-->
+				<section>
+					<video data-src="vid/hito_steyerl.mp4" controls loop class="r-stretch">
+				</section>
+
+
+
+
+				<!--
+					Parfois une vidéo est juste décorative/illustrative, pas besoin de le regarder en entier,
+					ou d'avoir de contrôle sur sa lecture (si c'est l'extrait d'une référence par exemple).
+					Vous pouvez alors utiliser la vidéo en fond, comme ci-dessous:
+				-->
+				<section data-background-video="vid/dance.mp4" data-background-video-loop="true" data-background-video-muted="true">
 					<h2>Video background</h2>
 				</section>
 
-				<section data-background-iframe="https://slides.com/news/make-better-presentations/embed?style=hidden&autoSlide=4000">
-					<h2>Iframe background</h2>
+
+				<!--
+					Enfin, si nécessaire, vous pouvez utiliser une autre couleur de fond,
+					par exemple pour utiliser une couleur de fond différente selon qu'il s'agisse d'un titre
+					ou d'une image pleine page (où le fond devrait être noir...)
+				-->
+				<section data-background="#00dd83">
+					<h2>Une autre couleur de fond</h2>
 				</section>
 
-				<section>
-					<section data-background="#417203">
-						<h2>Same background twice vertical (1/2)</h2>
-					</section>
-					<section data-background="#417203">
-						<h2>Same background twice vertical (2/2)</h2>
-					</section>
-				</section>
-
-				<section data-background="#934f4d">
-					<h2>Same background from horizontal to vertical (1/3)</h2>
-				</section>
-				<section>
-					<section data-background="#934f4d">
-						<h2>Same background from horizontal to vertical (2/3)</h2>
-					</section>
-					<section data-background="#934f4d">
-						<h2>Same background from horizontal to vertical (3/3)</h2>
-					</section>
-				</section>
+				<!--
+					Il existe plein d'autres possibilités, regardez le dossier EXAMPLES,
+					ainsi que la doc en ligne : https://revealjs.com/markup/
+			 	-->
 
 			</div>
 
 		</div>
 
-		<script src="../dist/reveal.js"></script>
+		<script src="../../dist/reveal.js"></script>
 		<script>
 
-			// Full list of configuration options:
+			// Options de votre présentation:
 			// https://revealjs.revealjs.com/config/
 			Reveal.initialize({
 				center: true,
-
-				transition: 'linear',
-				// transitionSpeed: 'slow',
-				// backgroundTransition: 'slide'
+				controls: false,
+				progress: false,
+				hash: true,
+				history: true,
+				// Transition style
+			  transition: 'fade', // none/fade/slide/convex/concave/zoom
+			  // Transition speed
+			  transitionSpeed: 'default', // default/fast/slow
+			  // Transition style for full page slide backgrounds
+			  backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
 			});
 
 		</script>
