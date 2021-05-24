@@ -12,6 +12,7 @@ Dans `_stluc/exemple`, vous trouverez une présentation (`index.html`) avec quel
 Pour créer vos propres slides, je vous recommande :
 - de créer un nouveau sous-dossier dans _stluc
 - d'y créer des sous-dossiers pour vos images et vidéos
+    - vidéos mp4 avec codec h264
 - d'y copier l'index.html du dossier "exemple"
 - d'adapter index.html pour votre présentation
 
